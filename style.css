@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #333;
+}
+header {
+    text-align: center;
+    background: #777;
+    color: white;
+    padding: 2rem 1rem;
+}
+.logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 1rem;
+}
+.imagen img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+}
+.error {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
