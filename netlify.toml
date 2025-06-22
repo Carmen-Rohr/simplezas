@@ -10,3 +10,8 @@
   for = "/audio/fondo.mp3"
   [headers.values]
     Content-Type = "audio/mpeg"
+    
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
