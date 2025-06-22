@@ -1,7 +1,7 @@
 [build]
-  publish = "."                # Publica desde el directorio raíz
+  publish = "."
   functions = "netlify/functions"
-  command = "npm install"      # Instala dependencias sin build adicional
+  command = "npm install"
 
 [[headers]]
   for = "/audio/fondo.mp3"
