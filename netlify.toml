@@ -1,7 +1,10 @@
 [build]
   publish = "."
-  functions = "netlify/functions/getImages"
+  functions = "netlify/functions"
   command = "npm install"
+
+[functions]
+  node_bundler = "esbuild"
 
 [[headers]]
   for = "/audio/fondo.mp3"
