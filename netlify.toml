@@ -1,10 +1,9 @@
 [build]
-  publish = "."                 # Publica desde el directorio raíz
+  publish = "."                # Publica desde el directorio raíz
   functions = "netlify/functions"
-  command = "npm run build"     # Ejecuta el script de build en package.json
+  command = "npm install"      # Instala dependencias sin build adicional
 
 [[headers]]
   for = "/audio/fondo.mp3"
   [headers.values]
     Content-Type = "audio/mpeg"
-
