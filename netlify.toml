@@ -1,9 +1,9 @@
-
 [build]
-publish = "."
-functions = "netlify/functions"
+  publish = "."               # Esto le dice a Netlify: "publicá el directorio raíz"
+  functions = "netlify/functions"
+  command = "npm install"     # O podés dejarlo vacío si no hay build como tal
 
-[[redirects]]
-from = "/api/*"
-to = "/.netlify/functions/:splat"
-status = 200
+[[headers]]
+  for = "/audio/fondo.mp3"
+  [headers.values]
+    Content-Type = "audio/mpeg"
