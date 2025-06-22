@@ -1,9 +1,10 @@
 [build]
-  publish = "."               # Esto le dice a Netlify: "publicá el directorio raíz"
+  publish = "."                 # Publica desde el directorio raíz
   functions = "netlify/functions"
-  command = "npm install"     # O podés dejarlo vacío si no hay build como tal
+  command = "npm run build"     # Ejecuta el script de build en package.json
 
 [[headers]]
   for = "/audio/fondo.mp3"
   [headers.values]
     Content-Type = "audio/mpeg"
+
