@@ -1,0 +1,9 @@
+{
+  "name": "simplezas-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Sitio Simplezas con carga dinâmica de imágenes desde Cloudinary",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
