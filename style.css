@@ -4,29 +4,84 @@ body {
     background: #fff;
     color: #333;
 }
-header {
+
+.fondo {
     text-align: center;
-    background: #777;
+    background-image: url("./img/fondo.jpg");
+    background-size: cover;       /* Para que ocupe toda la pantalla */
+   /* background-position:;  /* Centrada */
+    background-repeat: no-repeat; /* Que no se repita */
     color: white;
     padding: 2rem 1rem;
 }
+
 .logo {
     width: 80px;
     margin-bottom: 10px;
 }
-.galeria {
+
+#galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     padding: 1rem;
 }
+
 .imagen img {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 0 5px #ccc;
 }
-.error {
+
+#error {
     text-align: center;
     color: red;
     font-weight: bold;
+}
+
+#audio-player {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#audio-player audio {
+    outline: none;
+    width: 200px;
+}
+
+#audio-player:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
 }
