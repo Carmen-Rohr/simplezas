@@ -23,6 +23,7 @@ main {
     background-repeat: no-repeat; /* Que no se repita */
     color: white;
     padding: 2rem 1rem;
+    font-weight: bold;
 }
 
 .logo {
@@ -76,7 +77,7 @@ main {
 }
 
 
-#audio-player {
+.music-floating-button {
     position: fixed;
     bottom: 20px;
     left: 20px;
@@ -96,16 +97,11 @@ main {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-#audio-player:hover {
+.music-floating-button:hover {
     transform: scale(1.1);
     background-color: #732d91; /* tono más oscuro al pasar el mouse */
-}
-
-
-#audio-player:hover {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
-
 
 .whatsapp-button {
     position: fixed;
