@@ -27,7 +27,7 @@ main {
 }
 
 .logo {
-    width: 80px;
+    width: 100px;
     margin-bottom: 10px;
 }
 
@@ -50,32 +50,18 @@ main {
     font-weight: bold;
 }
 
-/*#audio-player {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 10px 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-} 
-
-#audio-player audio {
-    outline: none;
-    width: 200px;
-} */
 
 .titulo-principal {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #5a2a83; /* un violeta suave o ajusta según tu paleta */
+    font-style: italic;
+    color: white; 
 }
 
+.subtitulo {
+    font-weight: bold;
+}
 
 .music-floating-button {
     position: fixed;
