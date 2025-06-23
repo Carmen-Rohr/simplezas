@@ -1,26 +1,52 @@
-const axios = require("axios");
-exports.handler = async function () {
-  const folder = "artesanias";
-  const cloudName = process.env.CLOUD_NAME;
-  const apiKey = process.env.CLOUD_API_KEY;
-  const apiSecret = process.env.CLOUD_API_SECRET;
 
-  const url = `https://${cloudName}:${apiSecret}@api.cloudinary.com/v1_1/${cloudName}/resources/image`;
-  const result = await axios.get(url, {
-    params: {
-      type: "upload",
-      prefix: folder + "/",
-      max_results: 100
-    },
-    auth: {
-      username: apiKey,
-      password: apiSecret
+// netlify/functions/getImages.js
+
+const fetch = require('node-fetch');
+
+exports.handler = async function(event, context) {
+  const CLOUD_NAME = process.env.CLOUD_NAME;
+  const API_KEY = process.env.CLOUD_API_KEY;
+  const API_SECRET = process.env.CLOUD_API_SECRET;
+
+  if (!CLOUD_NAME || !API_KEY || !API_SECRET) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Faltan variables de entorno para Cloudinary' }),
+    };
+  }
+
+  const auth = Buffer.from(`${API_KEY}:${API_SECRET}`).toString('base64');
+
+  const url = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/resources/image?type=upload&prefix=artesanias&max_results=100&direction=desc&order_by=created_at`;
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Basic ${auth}`,
+      },
+    });
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      return {
+        statusCode: response.status,
+        body: JSON.stringify({ error: errorBody }),
+      };
     }
-  });
 
-  const images = result.data.resources.map(r => r.secure_url);
-  return {
-    statusCode: 200,
-    body: JSON.stringify(images)
-  };
+    const data = await response.json();
+
+    // Extraer solo las URLs seguras
+    const imageUrls = data.resources.map(img => img.secure_url);
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(imageUrls),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: error.message }),
+    };
+  }
 };
