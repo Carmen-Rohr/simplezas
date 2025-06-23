@@ -13,40 +13,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <section class="bg-light p-5 fondo">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
-          <img src="./img/logo.png" alt="Simplezas Logo" class="img-fluid logo" />
-        </div>
-        <div class="col-md-9 text-center text-md-start">
-          <h1 class="titulo-principal">Bienvenidos a Simplezas</h1>
-          <p class="lead">Descubre mis creaciones hechas a mano con cuidado y atención al detalle.</p>
+  <main>
+    <section class="bg-light p-5 fondo">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
+            <img src="./img/logo.png" alt="Simplezas Logo" class="img-fluid logo" />
+          </div>
+          <div class="col-md-9 text-center text-md-start">
+            <h1 class="titulo-principal">Bienvenidos a Simplezas</h1>
+            <p class="lead">Descubre mis creaciones hechas a mano con cuidado y atención al detalle.</p>
+          </div>
         </div>
       </div>
+    </section>
+
+    <div class="container mt-5">
+      <h3 class="mb-4">Artesanías</h3>
+      <div id="galeria" class="row g-4"></div>
+      <p id="error" class="text-danger mt-3" style="display:none;">Error al cargar imágenes.</p>
     </div>
-  </section>
 
-  <div class="container mt-5">
-    <h3 class="mb-4">Artesanías</h3>
-    <div id="galeria" class="row g-4"></div>
-    <p id="error" class="text-danger mt-3" style="display:none;">Error al cargar imágenes.</p>
-  </div>
+    <div class="container btn-whatsapp-container text-center">
+      <a href="https://wa.me/5492323672451?text=Hola%2C%20vi%20tus%20artesan%C3%ADas%20en%20la%20web%20y%20quer%C3%ADa%20consultarte." 
+        target="_blank" 
+        class="btn btn-success btn-lg d-inline-flex align-items-center justify-content-center">
+        <i class="bi bi-whatsapp me-2" style="font-size: 1.5rem;"></i>
+        Consultar por WhatsApp
+      </a>
+    </div>
 
-  <div class="container btn-whatsapp-container text-center">
-    <a href="https://wa.me/5492323672451?text=Hola%2C%20vi%20tus%20artesan%C3%ADas%20en%20la%20web%20y%20quer%C3%ADa%20consultarte." 
-       target="_blank" 
-       class="btn btn-success btn-lg d-inline-flex align-items-center justify-content-center">
-      <i class="bi bi-whatsapp me-2" style="font-size: 1.5rem;"></i>
-      Consultar por WhatsApp
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/5492323672451" target="_blank" class="whatsapp-button">
+      <i class="bi bi-whatsapp"></i>  
     </a>
-  </div>
-
-  <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/5492323672451" target="_blank" class="whatsapp-button">
-    <i class="bi bi-whatsapp"></i>  
-  </a>
-
+  </main>
   <!-- Footer -->
   <footer class="text-center p-3 mt-5">
     <p class="mb-1">&copy; 2025 Simplezas - Artesanías hechas a mano</p>
