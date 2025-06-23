@@ -15,16 +15,6 @@ main {
     flex: 1;
 }
 
-/* .fondo {
-    text-align: center;
-    background-image: url("./img/fondo.jpg");
-    background-size: cover;        Para que ocupe toda la pantalla 
-    background-position:;  Centrada 
-    background-repeat: no-repeat;  Que no se repita 
-    color: white;
-    padding: 2rem 1rem;
-    font-weight: bold;
-} */
 
 .fondo {
     position: relative;
@@ -74,8 +64,8 @@ main {
 }
 
 .footer-personalizado {
-    background-color: #4b2c5e; /* Violeta profundo */
-    color: white;
+    background-color: #5a3e2b; /* Violeta profundo */
+    color: black;
     font-family: 'Lato', sans-serif;
     font-size: 0.95rem;
     padding: 2rem 1rem;
@@ -85,13 +75,13 @@ main {
 }
 
 .footer-personalizado a {
-    color: #ddd;
+    color: #e6d3b3;
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .footer-personalizado a:hover {
-    color: #ffffff;
+    color: #ffd89b;
     text-decoration: underline;
 }
 
@@ -103,12 +93,16 @@ main {
 
 
 .titulo-principal {
-   /* font-family: 'Playfair Display', serif; */
     font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
+    font-size: 5rem;
     font-weight: 700;
-    font-style: italic;
+   /* font-style: italic; */
     color: white; 
+}
+
+h3 {
+   font-family: 'Great Vibes', cursive;
+   text-align: center;
 }
 
 .subtitulo {
