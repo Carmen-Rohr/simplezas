@@ -1,6 +1,4 @@
-
-// netlify/functions/getImages.js
-
+require('dotenv').config();
 const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
@@ -16,11 +14,22 @@ exports.handler = async (event, context) => {
   }
 
   const auth = Buffer.from(`${API_KEY}:${API_SECRET}`).toString('base64');
-  const url = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/resources/image?type=upload&prefix=artesanias&max_results=100&direction=desc&order_by=created_at`;
+  const url = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/resources/search`;
+
+  const body = {
+    expression: 'folder:artesanias AND resource_type:image',
+    sort_by: [{ created_at: 'desc' }],
+    max_results: 100
+  };
 
   try {
     const resp = await fetch(url, {
-      headers: { Authorization: `Basic ${auth}` }
+      method: 'POST',
+      headers: {
+        Authorization: `Basic ${auth}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
     });
 
     if (!resp.ok) {
@@ -29,10 +38,21 @@ exports.handler = async (event, context) => {
     }
 
     const data = await resp.json();
-    const urls = data.resources.map(img => img.secure_url);
-    return { statusCode: 200, body: JSON.stringify(urls) };
+
+    const urls = data.resources.map(img => {
+      // Agrega los parámetros justo después de /upload/
+      return img.secure_url.replace('/upload/', '/upload/w_800,q_auto,f_auto/');
+    });
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(urls)
+    };
 
   } catch (err) {
-    return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: err.message })
+    };
   }
 };

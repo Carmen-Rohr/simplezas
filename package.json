@@ -4,6 +4,8 @@
   "main": "index.js",
   "description": "Sitio Simplezas con carga dinâmica de imágenes desde Cloudinary",
   "dependencies": {
+    "cloudinary": "^2.7.0",
+    "dotenv": "^16.5.0",
     "node-fetch": "^2.6.1"
   }
 }
